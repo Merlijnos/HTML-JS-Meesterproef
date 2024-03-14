@@ -2,13 +2,12 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Catalogus</title>
+    <title>Gamepicker</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="game-picker">
 <header class="blue-background">
-    <h1>Game Catalogus</h1>
+    <h1>Gamepicker</h1>
 </header>
 <nav>
     <ul>
@@ -21,10 +20,28 @@
     </ul>
 </nav>
 <main>
-    <p>Content for the main section will be added here.</p>
+    <div id="totalOverview">
+        <h1>Totaaloverzicht</h1>
+        <div id="filters">
+            <label for="priceFilter">Prijs lager dan:</label>
+            <input type="number" id="priceFilter" oninput="filterGames()">
+            <label for="genreFilter">Genre:</label>
+            <select id="genreFilter" onchange="filterGames()">
+                <option value="">--Selecteer een genre--</option>
+                <!-- Voeg hier opties toe voor elk genre -->
+            </select>
+            <label for="ratingFilter">Rating lager dan:</label>
+            <input type="number" id="ratingFilter" oninput="filterGames()">
+        </div>
+        <button onclick="calculatePrice()">Bereken prijs</button>
+        <div id="gamesList"></div>
+    </div>
+    <div id="cart" style="display: none;">
+        <h1>Winkelmandje</h1>
+        <div id="cartList"></div>
+        <h2>Totaalprijs: <span id="totalPrice"></span></h2>
+    </div>
 </main>
-<footer>
-    &copy; 2024 - Merlijn de Groot
-</footer>
+<script src="games.js"></script>
 </body>
 </html>

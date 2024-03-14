@@ -111,6 +111,18 @@ main {
     /* Voeg eventueel extra stijlen toe */
 }
 
+.game-item {
+    border: 1px solid #000;
+    border-radius: 10px; /* Adjust as needed for smoother corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adjust as needed for desired shadow */
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.game-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adjust as needed for desired hover shadow */
+}
+
 section {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -177,12 +189,47 @@ button {
     cursor: pointer;
     padding: 10px 20px;
     transition: background-color 0.2s ease-in-out;
+    margin-bottom: 20px; /* Add space above the button */
+    width: 100%; /* Stretch the button across the screen */
 }
 
 button:hover {
     background-color: #2980b9;
 }
 
+#totalOverview {
+    padding: 20px;
+    margin: 20px;
+}
+
+#gamesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+#filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    border-radius: 10px; /* Adjust as needed for smoother corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adjust as needed for desired shadow */
+    padding: 20px;
+}
+
+#filters label {
+    margin-right: 10px;
+}
+
+#filters input[type="number"],
+#filters select {
+    width: 100px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px;
+}
 /* Footer */
 
 footer {
